@@ -1,0 +1,29 @@
+{
+  "name": "apiplenitudepdv",
+  "version": "1.0.0",
+  "description": "Api de acesso a dados do aplicativo pdv",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueEizu/apiPlenitudePDV.git"
+  },
+  "author": "Eizu e Breno Soluções",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueEizu/apiPlenitudePDV/issues"
+  },
+  "homepage": "https://github.com/HenriqueEizu/apiPlenitudePDV#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mssql": "^6.2.3",
+    "nodemon": "^2.0.4"
+  }
+}
