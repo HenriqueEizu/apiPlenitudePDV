@@ -4,11 +4,11 @@ let config = {
     // password: '850495Ab',
     // database: 'chutesfutmesa'
 
-    host    : 'localhost',
-    port     : '3306',
-    user    : 'root',
-    password: '850495',
-    database: 'futmesacartola'
+    server    : 'mpc2remoto.ddns.net',
+    port : 1933,
+    user    : 'UsrLoja',
+    password: '132762A!@#a', //'Usr@Store#20',
+    database: 'LojaFabrica'
   };
 
 let jwt_key = "segredo"
