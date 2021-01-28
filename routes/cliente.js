@@ -17,6 +17,9 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.options('/listaclientes', cors()) // enable pre-flight request for DELETE 
 router.get('/listaclientes', cors(), clienteControllers.GetAllClientes)
 
+router.options('/listaclienteCPF/:id', cors()) // enable pre-flight request for DELETE 
+router.get('/listaclienteCPF/:id', cors(), clienteControllers.GetClienteCPF)
+
 router.options('/GetAllEstados', cors()) // enable pre-flight request for DELETE 
 router.get('/GetAllEstados', cors(), clienteControllers.GetAllEstados)
 

@@ -7,7 +7,7 @@ let config = {
     server    : 'mpc2remoto.ddns.net',
     port : 1933,
     user    : 'UsrLoja',
-    password: '132762A!@#a', //'Usr@Store#20',
+    password: '132762A!@#b', //'Usr@Store#20',
     database: 'LojaFabrica'
   };
 

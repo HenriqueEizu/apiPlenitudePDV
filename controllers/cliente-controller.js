@@ -73,6 +73,49 @@ exports.GetAllClientes = (req,res) => {
     });
 }
 
+exports.GetClienteCPF = (req,res) => {
+    strSql : String;
+    campo : String;
+    criterio : String;
+    strQuery : String;
+    var data = [];
+
+    strSql = "  SELECT  C.ID_CLI, P.NOME, P.CNPJCPF, P.IESTRG, P.INDFISJUR , PE.IdEndereco, PE.IndTipoEndereco "
+    strSql += " FROM	CLIENTE C "
+    strSql += " JOIN	PESSOA P ON C.IDPESSOA = P.IDPESSOA "
+    strSql += " JOIN    PessoaEndereco PE ON PE.IdPessoa = P.IdPessoa "
+    strSql += " WHERE   P.CNPJCPF = '" + [req.params.id]  + "'"
+    console.log(strSql)
+    sql.connect(config, function (err) {
+        if (err) console.log(err);
+        var request = new sql.Request();
+        request.query(strSql, function (err, rows) {
+            if (err) {return res.status(500).send({ error: err})}
+            if (rows.rowsAffected < 1){ 
+                return res.status(200).send({ 
+                    cliente : null,
+                    })
+            }
+            if (err) { return res.status(401).send({ mensagem: 'Falha na autenticação 2'})}
+            return res.status(200).send(
+                 {  
+                     cliente: {
+                        Id_Cli : rows.recordsets[0][0].ID_CLI,
+                        Nome : rows.recordsets[0][0].NOME,
+                        cpf :  rows.recordsets[0][0].CNPJCPF,
+                        IdEndereco : rows.recordsets[0][0].IdEndereco,
+                        tipoEndereco : rows.recordsets[0][0].IndTipoEndereco,
+                        }
+                }
+            )
+        });
+    });
+    
+}
+
+
+
+
 exports.GetIdCliente = (req,res) => {
     strSql : String;
 
